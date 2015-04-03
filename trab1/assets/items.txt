@@ -1,0 +1,7 @@
+6
+0 Rock1 200
+1 Rock2 1
+2 Rock3 5
+C House 1
+S Start 1
+E End 1

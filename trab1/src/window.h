@@ -24,6 +24,8 @@ public:
     void setTitle(const std::string& title);
     void setMinimumSize(int width, int height);
 
+    void getSize(int& width, int& height);
+
     bool hasFinished() { return m_finished; }
 
 private:

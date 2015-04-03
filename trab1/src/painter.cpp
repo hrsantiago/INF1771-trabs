@@ -32,3 +32,14 @@ void Painter::swapBuffers()
 {
     SDL_RenderPresent(m_sdlRenderer);
 }
+
+void Painter::setColor(int r, int g, int b, int a)
+{
+    SDL_SetRenderDrawColor(m_sdlRenderer, r, g, b, a);
+}
+
+void Painter::drawFilledRect(int x, int y, int width, int height)
+{
+    SDL_Rect sdlRect = {x, y, width, height};
+    SDL_RenderFillRect(m_sdlRenderer, &sdlRect);
+}

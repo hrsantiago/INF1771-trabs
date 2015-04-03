@@ -18,7 +18,7 @@ void Window::init()
 
     m_window = SDL_CreateWindow("ait1",
                                 SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                                640, 480,
+                                800, 600,
                                 flags);
 
     if(!m_window)
@@ -98,4 +98,9 @@ void Window::setTitle(const std::string& title)
 void Window::setMinimumSize(int width, int height)
 {
     SDL_SetWindowMinimumSize(m_window, width, height);
+}
+
+void Window::getSize(int& width, int& height)
+{
+    SDL_GetWindowSize(m_window, &width, &height);
 }

@@ -11,6 +11,9 @@ public:
     void destroy();
 
     void swapBuffers();
+    void setColor(int r, int g, int b, int a);
+
+    void drawFilledRect(int x, int y, int width, int height);
 
     void setRenderer(SDL_Renderer *renderer) { m_sdlRenderer = renderer; }
     SDL_Renderer *getRenderer() { return m_sdlRenderer; }
