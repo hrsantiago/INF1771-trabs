@@ -22,6 +22,7 @@ public:
     void removeThing(Thing *thing);
 
     Item *getGround() { return m_ground; }
+    const std::vector<Thing*>& getThings() { return m_things; }
 
 private:
     Position m_position;

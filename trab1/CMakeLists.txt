@@ -12,6 +12,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-O4 -ffast-math")
 SET(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -std=c++11")
 
 ADD_EXECUTABLE(ait1
+src/item.cpp
 src/item.h
 src/items.cpp
 src/items.h

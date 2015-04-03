@@ -6,7 +6,10 @@
 class Item : public Thing
 {
 public:
-    Item(char id) : m_id(id) {}
+    Item(char id, const Position& position) : Thing(position), m_id(id) {}
+    virtual ~Item() {}
+
+    void draw(int x, int y, int size);
 
     void setId(char id) { m_id = id; }
 

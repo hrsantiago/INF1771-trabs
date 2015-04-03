@@ -3,13 +3,13 @@
 
 #include <vector>
 #include <cmath>
+#include <functional>
 
 enum Direction {
     North = 0,
     East,
     South,
     West,
-
     InvalidDirection
 };
 
@@ -75,6 +75,20 @@ public:
         return positions;
     }
 
+    Direction getDirectionFromPosition(const Position& position) const {
+        if(x == position.x+1 && y == position.y)
+            return West;
+        else if(x == position.x-1 && y == position.y)
+            return East;
+        else if(x == position.x && y == position.y+1)
+            return North;
+        else if(x == position.x && y == position.y-1)
+            return South;
+        else
+            return InvalidDirection;
+    }
+
+
     float distance(const Position& pos) const { return std::sqrt(std::pow((pos.x - x), 2) + std::pow((pos.y - y), 2)); }
     int manhattanDistance(const Position& pos) const { return std::abs(pos.x - x) + std::abs(pos.y - y); }
 
@@ -96,6 +110,12 @@ public:
 
     int x;
     int y;
+};
+
+struct PositionHasher : std::unary_function<Position, std::size_t> {
+    std::size_t operator()(const Position& pos) const {
+        return (pos.x * 1000) + pos.y;
+    }
 };
 
 #endif
