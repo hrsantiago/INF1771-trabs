@@ -19,7 +19,7 @@ public:
     Position getStartPosition() { return m_startPosition; }
     Position getEndPosition() { return m_endPosition; }
 
-    int moveThing(Thing *thing, const Position& position);
+    float moveThing(Thing *thing, const Position& position);
     std::vector<Direction> findPath(const Position& startPos, const Position& endPos);
 
 private:

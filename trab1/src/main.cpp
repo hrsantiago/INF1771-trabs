@@ -51,6 +51,7 @@ int main(int argc, char* argv[])
     float fightsCost = 0;
     int64_t startCalc = micros();
     std::vector<std::vector<int>> fights = g_houses.findFights(player->getKnights());
+    player->setFighters(fights);
     int64_t fightsCalcTime = micros() - startCalc;
 
     std::vector<Knight> knights = g_knights.createKnights();
@@ -92,13 +93,16 @@ int main(int argc, char* argv[])
     ticks_t lastUpdate = millis();
     unsigned int dirIndex = 0;
 
-    pathCost = 0;
+    float totalCost = 0;
     while(!g_window.hasFinished()) {
         g_window.poll();
 
-        if(millis() - lastUpdate > 500) {
-            if(dirIndex < dirs.size())
-                pathCost += g_map.moveThing(player, player->getPosition().translatedToDirection(dirs[dirIndex++]));
+        if(millis() - lastUpdate > 50) {
+            if(dirIndex < dirs.size()) {
+                totalCost += g_map.moveThing(player, player->getPosition().translatedToDirection(dirs[dirIndex++]));
+                printf("Total viewed cost: %.2f\n", totalCost);
+                fflush(stdout);
+            }
             lastUpdate = millis();
         }
         g_map.draw();
@@ -106,7 +110,7 @@ int main(int argc, char* argv[])
     }
     g_window.terminate();
 
-    printf("Total viewed cost: %d\n", pathCost);
+    printf("Total viewed cost: %.2f\n", totalCost);
 
     return 0;
 }

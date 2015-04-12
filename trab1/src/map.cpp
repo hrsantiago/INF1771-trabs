@@ -99,7 +99,7 @@ Tile *Map::getTile(const Position& position)
     return tile;
 }
 
-int Map::moveThing(Thing *thing, const Position& position)
+float Map::moveThing(Thing *thing, const Position& position)
 {
     Tile *fromTile = getTile(thing->getPosition());
     fromTile->removeThing(thing);
@@ -107,7 +107,7 @@ int Map::moveThing(Thing *thing, const Position& position)
     toTile->addThing(thing);
     thing->setPosition(position);
 
-    return g_items.getItem(toTile->getGround()->getId())->cost;
+    return g_items.getItem(toTile->getGround()->getId())->cost + thing->onEnterTile(toTile);
 }
 
 std::vector<Direction> Map::findPath(const Position& startPos, const Position& endPos)
