@@ -7,6 +7,13 @@ Items::Items()
     m_items.resize(256);
 }
 
+Items::~Items()
+{
+    for(ItemType *itemType : m_items)
+        if(itemType)
+            delete itemType;
+}
+
 bool Items::load(const std::string& filename)
 {
     FILE *fp = fopen(filename.c_str(), "r");
@@ -21,7 +28,7 @@ bool Items::load(const std::string& filename)
         return false;
     }
 
-    if(count > 1000) {
+    if(count > 256) {
         printf("Too many items.\n");
         return false;
     }

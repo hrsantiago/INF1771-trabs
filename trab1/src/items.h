@@ -14,6 +14,7 @@ class Items
 {
 public:
     Items();
+    ~Items();
     bool load(const std::string& filename);
 
     ItemType *getItem(char id);

@@ -119,13 +119,11 @@ std::vector<Direction> Map::findPath(const Position& startPos, const Position& e
         Position pos;
         Node *prev;
         Direction dir;
-        int n = 0;
     };
 
     struct LessNode : std::binary_function<std::pair<Node*, float>, std::pair<Node*, float>, bool> {
         bool operator()(std::pair<Node*, float> a, std::pair<Node*, float> b) const {
             return b.second < a.second;
-            //return b.first->n < a.first->n;
         }
     };
 
@@ -133,11 +131,8 @@ std::vector<Direction> Map::findPath(const Position& startPos, const Position& e
     std::priority_queue<std::pair<Node*, float>, std::vector<std::pair<Node*, float>>, LessNode> searchList;
 
     Node *currentNode = new Node(startPos);
-    currentNode->pos = startPos;
     nodes[startPos] = currentNode;
     Node *foundNode = nullptr;
-
-    std::vector<Direction> dirs;
 
     while(currentNode) {
         if(currentNode->pos == endPos && (!foundNode || currentNode->cost < foundNode->cost))
@@ -157,20 +152,21 @@ std::vector<Direction> Map::findPath(const Position& startPos, const Position& e
                 Direction walkDir = currentNode->pos.getDirectionFromPosition(neighborPos);
 
                 Node *neighborNode;
-                if(nodes.find(neighborPos) == nodes.end()) {
+
+                auto it = nodes.find(neighborPos);
+                if(it == nodes.end()) {
                     neighborNode = new Node(neighborPos);
                     nodes[neighborPos] = neighborNode;
                 } else {
-                    neighborNode = nodes[neighborPos];
+                    neighborNode = (*it).second;
                     if(neighborNode->cost <= cost)
                         continue;
                 }
 
                 neighborNode->prev = currentNode;
                 neighborNode->cost = cost;
-                neighborNode->totalCost = neighborNode->cost + neighborPos.manhattanDistance(endPos);
+                neighborNode->totalCost = cost + neighborPos.manhattanDistance(endPos);
                 neighborNode->dir = walkDir;
-                neighborNode->n = currentNode->n + 1;
                 searchList.push(std::make_pair(neighborNode, neighborNode->totalCost));
             }
         }
@@ -182,6 +178,7 @@ std::vector<Direction> Map::findPath(const Position& startPos, const Position& e
             currentNode = nullptr;
     }
 
+    std::vector<Direction> dirs;
     if(foundNode) {
         currentNode = foundNode;
         while(currentNode) {
@@ -192,7 +189,7 @@ std::vector<Direction> Map::findPath(const Position& startPos, const Position& e
         std::reverse(dirs.begin(), dirs.end());
     }
 
-    for(auto it : nodes)
+    for(auto& it : nodes)
         delete it.second;
 
     return dirs;
