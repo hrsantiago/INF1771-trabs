@@ -11,6 +11,7 @@ public:
     void destroy();
 
     void swapBuffers();
+    void clear(int r, int g, int b);
     void setColor(int r, int g, int b, int a);
 
     void drawFilledRect(int x, int y, int width, int height);

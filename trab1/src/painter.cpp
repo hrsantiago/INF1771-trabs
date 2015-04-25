@@ -30,6 +30,12 @@ void Painter::swapBuffers()
     SDL_RenderPresent(m_sdlRenderer);
 }
 
+void Painter::clear(int r, int g, int b)
+{
+    setColor(r, g, b, 255);
+    SDL_RenderClear(m_sdlRenderer);
+}
+
 void Painter::setColor(int r, int g, int b, int a)
 {
     SDL_SetRenderDrawColor(m_sdlRenderer, r, g, b, a);

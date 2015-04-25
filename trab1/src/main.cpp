@@ -108,6 +108,7 @@ int main(int argc, char* argv[])
             }
             lastUpdate = millis();
         }
+        g_painter.clear(0, 0, 0);
         g_map.draw();
         g_painter.swapBuffers();
     }
