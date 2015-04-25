@@ -10,6 +10,7 @@
 #include "player.h"
 
 Map g_map;
+extern bool g_breakA;
 
 Map::~Map()
 {
@@ -137,6 +138,11 @@ std::vector<Direction> Map::findPath(const Position& startPos, const Position& e
     while(currentNode) {
         if(currentNode->pos == endPos && (!foundNode || currentNode->cost < foundNode->cost))
             foundNode = currentNode;
+
+        // cost is too high, however if heuristic function has not been properly chosen, it might not return the best solution
+        // param -no-break will ignore this
+        if(g_breakA && foundNode && currentNode->totalCost >= foundNode->cost)
+            break;
 
         for(int i=-1;i<=1;++i) {
             for(int j=-1;j<=1;++j) {

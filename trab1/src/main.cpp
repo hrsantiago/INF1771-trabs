@@ -12,6 +12,7 @@
 
 typedef long ticks_t;
 const static auto startup_time = std::chrono::high_resolution_clock::now();
+bool g_breakA = true;
 
 ticks_t millis()
 {
@@ -25,12 +26,14 @@ int64_t micros()
 
 int main(int argc, char* argv[])
 {
-    bool render = false;
+    bool render = true;
 
     std::vector<std::string> args(argv, argv + argc);
     for(const std::string& arg : args) {
-        if(arg == "-render")
-            render = true;
+        if(arg == "-no-render")
+            render = false;
+        else if(arg == "-no-break")
+            g_breakA = false;
     }
 
     if(!g_houses.load("assets/houses.txt"))

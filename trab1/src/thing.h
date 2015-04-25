@@ -12,7 +12,7 @@ public:
     virtual ~Thing() {}
 
     virtual void draw(int x, int y, int size) = 0;
-    virtual float onEnterTile(Tile *tile) { return 0; }
+    virtual float onEnterTile(Tile *) { return 0; }
 
     void setPosition(const Position& position) { m_position = position; }
     Position getPosition() const { return m_position; }

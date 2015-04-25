@@ -5,6 +5,7 @@
 #include "knights.h"
 
 Houses g_houses;
+extern bool g_breakA;
 
 Houses::~Houses()
 {
@@ -151,6 +152,11 @@ std::vector<std::vector<int>> Houses::findFights(const std::vector<Knight>& knig
     while(currentNode) {
         if(currentNode->nodeState.housesFought == housesCount && (!foundNode || currentNode->cost < foundNode->cost))
             foundNode = currentNode;
+
+        // cost is too high, however if heuristic function has not been properly chosen, it might not return the best solution
+        // param -no-break will ignore this
+        if(g_breakA && foundNode && currentNode->totalCost >= foundNode->cost)
+            break;
 
         if(currentNode->nodeState.housesFought < housesCount) {
             for(std::vector<int>& fighters : fightsPermutation) {
