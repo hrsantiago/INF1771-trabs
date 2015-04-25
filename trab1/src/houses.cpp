@@ -68,7 +68,7 @@ float Houses::getEstimatedCost(int currentHouse, const std::vector<Knight>& knig
 {
     float cost = 0;
 
-    for(uint i = currentHouse; i < m_houses.size(); ++i)
+    for(size_t i = currentHouse; i < m_houses.size(); ++i)
         cost += m_houses[i]->cost;
 
     float power = 0;
@@ -95,7 +95,7 @@ std::vector<std::vector<int>> Houses::findFights(const std::vector<Knight>& knig
     struct NodeStateHasher : std::unary_function<NodeState, std::size_t> {
         std::size_t operator()(const NodeState& nodeState) const {
             std::size_t ret = nodeState.housesFought;
-            for(uint i = 0; i < nodeState.knights.size(); ++i)
+            for(size_t i = 0; i < nodeState.knights.size(); ++i)
                 ret |= nodeState.knights[i].health << (4*(i+1));
             return ret;
         }

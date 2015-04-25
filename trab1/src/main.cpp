@@ -52,13 +52,13 @@ int main(int argc, char* argv[])
     player->setKnights(g_knights.createKnights());
 
     float fightsCost = 0;
-    int64_t startCalc = micros();
+    long unsigned int startCalc = micros();
     std::vector<std::vector<int>> fights = g_houses.findFights(player->getKnights());
     player->setFighters(fights);
-    int64_t fightsCalcTime = micros() - startCalc;
+    long unsigned int fightsCalcTime = micros() - startCalc;
 
     std::vector<Knight> knights = g_knights.createKnights();
-    for(uint i = 0; i < fights.size(); ++i) {
+    for(size_t i = 0; i < fights.size(); ++i) {
         fightsCost += g_houses.fight(i, knights, fights[i]);
         printf("Fight: ");
         g_knights.printKnights(knights);
@@ -71,7 +71,7 @@ int main(int argc, char* argv[])
     int pathCost = 0;
     startCalc = micros();
     std::vector<Direction> dirs = g_map.findPath(g_map.getStartPosition(), g_map.getEndPosition());
-    int64_t pathCalcTime = micros() - startCalc;
+    long unsigned int pathCalcTime = micros() - startCalc;
     Position p = g_map.getStartPosition();
     for(Direction dir : dirs) {
         p = p.translatedToDirection(dir);
