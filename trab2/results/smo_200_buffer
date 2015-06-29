@@ -1,0 +1,257 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007"
+Relation:     reviews
+Instances:    50000
+Attributes:   201
+              [list of attributes omitted]
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: pos, neg
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -3.9101 * (normalized) count1
+ +      -4.1222 * (normalized) count2
+ +      -4.172  * (normalized) count3
+ +      -2.9421 * (normalized) count4
+ +      -2.4333 * (normalized) count5
+ +      -2.0932 * (normalized) count6
+ +      -2.5351 * (normalized) count7
+ +      -2.0429 * (normalized) count8
+ +      -2.4723 * (normalized) count9
+ +      -2.9741 * (normalized) count10
+ +      -4.2406 * (normalized) count11
+ +      -0.9531 * (normalized) count12
+ +      -3.3814 * (normalized) count13
+ +      -2.5085 * (normalized) count14
+ +      -2.2047 * (normalized) count15
+ +      -3.0602 * (normalized) count16
+ +      -2.0169 * (normalized) count17
+ +      -1.7235 * (normalized) count18
+ +      -0.9556 * (normalized) count19
+ +      -2.1806 * (normalized) count20
+ +      -3.6767 * (normalized) count21
+ +      -2.5547 * (normalized) count22
+ +      -3.6844 * (normalized) count23
+ +      -3.3826 * (normalized) count24
+ +      -1.8692 * (normalized) count25
+ +      -1.963  * (normalized) count26
+ +      -2.1384 * (normalized) count27
+ +      -1.4471 * (normalized) count28
+ +      -2.9092 * (normalized) count29
+ +      -1.168  * (normalized) count30
+ +      -0.592  * (normalized) count31
+ +      -1.279  * (normalized) count32
+ +      -1.5    * (normalized) count33
+ +      -2.1197 * (normalized) count34
+ +      -1.2104 * (normalized) count35
+ +      -2.9421 * (normalized) count36
+ +      -1.7439 * (normalized) count37
+ +      -1.5067 * (normalized) count38
+ +      -2.858  * (normalized) count39
+ +      -2.045  * (normalized) count40
+ +      -1.3476 * (normalized) count41
+ +      -1.4899 * (normalized) count42
+ +      -0.9404 * (normalized) count43
+ +      -2.0981 * (normalized) count44
+ +      -2.3127 * (normalized) count45
+ +      -1.0984 * (normalized) count46
+ +      -1.5694 * (normalized) count47
+ +      -1.4425 * (normalized) count48
+ +      -1.2672 * (normalized) count49
+ +      -1.8519 * (normalized) count50
+ +      -0.9052 * (normalized) count51
+ +      -2.7753 * (normalized) count52
+ +      -1.2066 * (normalized) count53
+ +      -0.1344 * (normalized) count54
+ +      -2.5894 * (normalized) count55
+ +      -1.9001 * (normalized) count56
+ +      -2.2299 * (normalized) count57
+ +      -1.2222 * (normalized) count58
+ +      -0.8547 * (normalized) count59
+ +      -2.2064 * (normalized) count60
+ +      -0.9247 * (normalized) count61
+ +      -0.7901 * (normalized) count62
+ +      -1.883  * (normalized) count63
+ +      -1.7434 * (normalized) count64
+ +      -1.8924 * (normalized) count65
+ +      -2.2859 * (normalized) count66
+ +      -0.9946 * (normalized) count67
+ +      -2.5213 * (normalized) count68
+ +      -2.2958 * (normalized) count69
+ +      -1.9181 * (normalized) count70
+ +      -1.8993 * (normalized) count71
+ +      -1.1442 * (normalized) count72
+ +      -2.1611 * (normalized) count73
+ +      -1.1114 * (normalized) count74
+ +      -2.8897 * (normalized) count75
+ +      -1.6131 * (normalized) count76
+ +      -2.207  * (normalized) count77
+ +      -1.1736 * (normalized) count78
+ +      -1.4707 * (normalized) count79
+ +      -1.5647 * (normalized) count80
+ +      -0.5379 * (normalized) count81
+ +      -2.0613 * (normalized) count82
+ +      -2.5    * (normalized) count83
+ +      -1.0394 * (normalized) count84
+ +      -1.0773 * (normalized) count85
+ +      -0.5804 * (normalized) count86
+ +      -1.2878 * (normalized) count87
+ +      -1.534  * (normalized) count88
+ +      -2.1057 * (normalized) count89
+ +      -1.0858 * (normalized) count90
+ +      -2      * (normalized) count91
+ +      -1.3333 * (normalized) count92
+ +      -1.5085 * (normalized) count93
+ +       0.2156 * (normalized) count94
+ +      -1.5328 * (normalized) count95
+ +      -1.177  * (normalized) count96
+ +      -2.261  * (normalized) count97
+ +      -1.9057 * (normalized) count98
+ +      -1.7811 * (normalized) count99
+ +      -1.6201 * (normalized) count100
+ +       6.5401 * (normalized) count101
+ +       5.3178 * (normalized) count102
+ +       2.8868 * (normalized) count103
+ +       5.7644 * (normalized) count104
+ +       9.9227 * (normalized) count105
+ +       5.3915 * (normalized) count106
+ +       2.2112 * (normalized) count107
+ +       5.4809 * (normalized) count108
+ +       4.3715 * (normalized) count109
+ +       4.2534 * (normalized) count110
+ +       1.7711 * (normalized) count111
+ +       3.3937 * (normalized) count112
+ +       3.1179 * (normalized) count113
+ +       5.4565 * (normalized) count114
+ +       1.3813 * (normalized) count115
+ +       2.1227 * (normalized) count116
+ +       2.9146 * (normalized) count117
+ +       3.1772 * (normalized) count118
+ +       3.4983 * (normalized) count119
+ +       3.58   * (normalized) count120
+ +       1.9824 * (normalized) count121
+ +       2.1723 * (normalized) count122
+ +       3.9393 * (normalized) count123
+ +       3.3837 * (normalized) count124
+ +       5.077  * (normalized) count125
+ +       2.8142 * (normalized) count126
+ +       4.4984 * (normalized) count127
+ +       3.9009 * (normalized) count128
+ +       2.2013 * (normalized) count129
+ +       2.0016 * (normalized) count130
+ +       2.0694 * (normalized) count131
+ +       1.6393 * (normalized) count132
+ +       1.2131 * (normalized) count133
+ +       2.3824 * (normalized) count134
+ +       2.6534 * (normalized) count135
+ +       3.5227 * (normalized) count136
+ +       1.2234 * (normalized) count137
+ +       1.2169 * (normalized) count138
+ +       2.0261 * (normalized) count139
+ +       2.1339 * (normalized) count140
+ +       3.0227 * (normalized) count141
+ +       1.2494 * (normalized) count142
+ +       2.7257 * (normalized) count143
+ +       4.0283 * (normalized) count144
+ +       2.4877 * (normalized) count145
+ +       1.6669 * (normalized) count146
+ +      -0.2251 * (normalized) count147
+ +       3.4185 * (normalized) count148
+ +       2.7769 * (normalized) count149
+ +       2.8405 * (normalized) count150
+ +       0.7086 * (normalized) count151
+ +       2.2244 * (normalized) count152
+ +       3.1349 * (normalized) count153
+ +       0.9482 * (normalized) count154
+ +       2.3163 * (normalized) count155
+ +       2.2502 * (normalized) count156
+ +       1.0823 * (normalized) count157
+ +       2.1461 * (normalized) count158
+ +       2.531  * (normalized) count159
+ +       1.7799 * (normalized) count160
+ +       1.383  * (normalized) count161
+ +       1.3524 * (normalized) count162
+ +       4.0497 * (normalized) count163
+ +       2.529  * (normalized) count164
+ +       1.2205 * (normalized) count165
+ +       0.5969 * (normalized) count166
+ +       1.2884 * (normalized) count167
+ +       1.942  * (normalized) count168
+ +       0.8533 * (normalized) count169
+ +       1.3243 * (normalized) count170
+ +       0.9288 * (normalized) count171
+ +       4.5627 * (normalized) count172
+ +       3.7931 * (normalized) count173
+ +       1.175  * (normalized) count174
+ +       2.0407 * (normalized) count175
+ +       2.0443 * (normalized) count176
+ +       1.2094 * (normalized) count177
+ +       0.6097 * (normalized) count178
+ +       1.1503 * (normalized) count179
+ +       2.161  * (normalized) count180
+ +       1.1629 * (normalized) count181
+ +       0.6508 * (normalized) count182
+ +       2.785  * (normalized) count183
+ +       4.0803 * (normalized) count184
+ +       1.3696 * (normalized) count185
+ +       1.434  * (normalized) count186
+ +       2.9866 * (normalized) count187
+ +       1.4247 * (normalized) count188
+ +       2.5307 * (normalized) count189
+ +       2.472  * (normalized) count190
+ +       2.7261 * (normalized) count191
+ +       1.9506 * (normalized) count192
+ +       0.3383 * (normalized) count193
+ +       2.8542 * (normalized) count194
+ +       1.735  * (normalized) count195
+ +       1.588  * (normalized) count196
+ +       1.9866 * (normalized) count197
+ +       0.8773 * (normalized) count198
+ +       3.8049 * (normalized) count199
+ +       0.9567 * (normalized) count200
+ -       0.2647
+
+Number of kernel evaluations: 131868023 (37.526% cached)
+
+
+
+Time taken to build model: 96.34 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       40370               80.74   %
+Incorrectly Classified Instances      9630               19.26   %
+Kappa statistic                          0.6148
+Mean absolute error                      0.1926
+Root mean squared error                  0.4389
+Relative absolute error                 38.52   %
+Root relative squared error             87.7724 %
+Coverage of cases (0.95 level)          80.74   %
+Mean rel. region size (0.95 level)      50      %
+Total Number of Instances            50000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.862    0.248    0.777      0.862    0.817      0.619    0.807     0.739     pos
+                 0.752    0.138    0.845      0.752    0.796      0.619    0.807     0.760     neg
+Weighted Avg.    0.807    0.193    0.811      0.807    0.807      0.619    0.807     0.749     
+
+=== Confusion Matrix ===
+
+     a     b   <-- classified as
+ 21560  3440 |     a = pos
+  6190 18810 |     b = neg
+
